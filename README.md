@@ -23,6 +23,8 @@ concept of high and low data rate communication classes,
 
 ## Bot features
 
+### Misc notes
+
 internal broadcast networking
 
 possibly using multicast or some form of UDP broadcast
@@ -42,10 +44,30 @@ then elect a single bot to communicate with the external C&C
 
 for other C&C mechanism, possibly hardcode IPs for non-real time data transports, github, twitter, etc
 
+would be nice to be able to interact with interactive command prompt utilities that require user input throughout the commands
+
+support for pushing commands to powershell and cmd
+
+
+### Behaviors
+
+
+#### Environment analysis
 heuristic analysis of a host based on configuration settings, have different sets of behaviors associated with different levels of configuration
  - if DNS is set to external, detected AV is not enterprise, no exfil filtering
  - assume environment is weakly protected and less stealthy communication will likely not be detected
 
 
-human layer denial of service features for IR departments in terms of creating a sacrificial bot to trigger as much IR as possible, calling out to fake https handlers, etc to take time away from IR against the actual attack; possibly trigger as a behavior on environments that are heuristicly detected as "locked down"
+#### Tricks for locked down environments 
+* human layer denial of service features for IR departments in terms of creating a sacrificial bot to trigger as much IR as possible, calling out to fake https handlers, etc to take time away from IR against the actual attack; possibly trigger as a behavior on environments that are heuristicly detected as "locked down"
 
+* Check if the machine is a laptop; if it is, wait until (as far as is detectable) the user goes home. attempt C&C communication then
+
+
+## Command and control Features
+
+Comamnd signing to allow for internal peer to peer communication
+
+Communication over https using websockets
+
+being able to bootstrap up a bot using a powershell one-liner would be nice to have
